@@ -49529,15 +49529,6 @@ var render = function() {
                   _c(
                     "a",
                     {
-                      staticClass: "btn btn-info",
-                      attrs: { href: "/admin/post-form.html?id=" + post.id }
-                    },
-                    [_vm._v("Editar")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
                       staticClass: "btn btn-danger",
                       attrs: { href: "#" },
                       on: {

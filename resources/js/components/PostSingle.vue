@@ -4,7 +4,7 @@
         <div class="card-body">
             <h5 class="card-title">{{post.title}}</h5>
             <div class="categories">
-                <span v-for="category in post.categories" class="badge badge-dark px-3 py-2">{{category.title}}</span>
+                <span v-for="category in post.categories" :key="category.id" class="badge badge-dark px-3 py-2 category-post">{{category.title}}</span>
             </div> 
             <div class="content mt-3" v-html="post.content">
                 
@@ -33,7 +33,6 @@
             }
         },
         created() {
-            console.log('criou');
             let uri = window.location.search.substring(1);
             let params = new URLSearchParams(uri);
             let id = params.get('id');
@@ -42,3 +41,8 @@
         }
     }
 </script>
+<style lang="scss">
+    .category-post {
+        margin-left: 10px;
+    }
+</style>

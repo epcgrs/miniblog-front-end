@@ -21,7 +21,7 @@ mix.browserSync({
     proxy: 'miniblog.dev.com',
     files: [
         './*.html',
-        '/assets/css/*.css',
-        '/assets/js/*.js'
+        './assets/css/*.css',
+        './assets/js/*.js'
     ]
 });

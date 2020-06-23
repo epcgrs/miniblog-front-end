@@ -70,12 +70,12 @@
                 });
             },
             previousPage() {
-                let paginateURL = this.prevPagination.replace(/^http:\/\//i, 'https://');
-                this.getPosts(paginateURL);
+                let paginateURL = this.prevPagination;
+                this.getPosts(paginateURL.replace(/^http:\/\//i, 'https://'));
             },
             nextPage() {
-                let paginateURL = this.nextPagination.replace(/^http:\/\//i, 'https://');
-                this.getPosts(paginateURL);
+                let paginateURL = this.nextPagination;
+                this.getPosts(paginateURL.replace(/^http:\/\//i, 'https://'));
             },
         },
         created() {

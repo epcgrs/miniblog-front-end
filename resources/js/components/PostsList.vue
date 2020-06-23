@@ -70,11 +70,11 @@
                 });
             },
             previousPage() {
-                let paginateURL = this.prevPagination;
+                let paginateURL = this.prevPagination.replace(/^http:\/\//i, 'https://');
                 this.getPosts(paginateURL);
             },
             nextPage() {
-                let paginateURL = this.nextPagination;
+                let paginateURL = this.nextPagination.replace(/^http:\/\//i, 'https://');
                 this.getPosts(paginateURL);
             },
         },

@@ -2311,7 +2311,7 @@ __webpack_require__.r(__webpack_exports__);
         content: this.dataForm.content,
         categories: cats
       };
-      axios.post('posts/' + this.post.id, formData, {
+      axios.put('posts/' + this.post.id, formData, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -62460,7 +62460,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
-axios.defaults.baseURL = 'http://localhost:8000/api/v1/';
+axios.defaults.baseURL = 'https://api-miniblog.herokuapp.com/api/v1/';
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('posts-list', __webpack_require__(/*! ./components/PostsList.vue */ "./resources/js/components/PostsList.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('post-single', __webpack_require__(/*! ./components/PostSingle.vue */ "./resources/js/components/PostSingle.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('table-posts', __webpack_require__(/*! ./components/admin/PostsTable.vue */ "./resources/js/components/admin/PostsTable.vue")["default"]);

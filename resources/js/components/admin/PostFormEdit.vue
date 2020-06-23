@@ -140,7 +140,7 @@
                     categories: cats,
                 }
       
-                axios.post(
+                axios.put(
                     'posts/' + this.post.id,
                     formData,
                     {

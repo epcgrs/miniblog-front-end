@@ -2035,11 +2035,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     },
     previousPage: function previousPage() {
-      var paginateURL = this.prevPagination;
+      var paginateURL = this.prevPagination.replace(/^http:\/\//i, 'https://');
       this.getPosts(paginateURL);
     },
     nextPage: function nextPage() {
-      var paginateURL = this.nextPagination;
+      var paginateURL = this.nextPagination.replace(/^http:\/\//i, 'https://');
       this.getPosts(paginateURL);
     }
   },

@@ -141,7 +141,7 @@
                 }
       
                 axios.put(
-                    'posts/' + this.post.id,
+                    'https://api-miniblog.herokuapp.com/api/v1/posts/' + this.post.id,
                     formData,
                     {
                         headers: {'Content-Type': 'application/json' }
@@ -158,7 +158,7 @@
             },
             getCategories() {
                 this.loading = true;
-                axios.get('categories').
+                axios.get('https://api-miniblog.herokuapp.com/api/v1/categories').
                 then(response => {
                     this.categories = response.data;
                     this.loading = false;
@@ -169,7 +169,7 @@
                 });
             },
             getPost(id) {
-                axios.get('posts/' + id).
+                axios.get('https://api-miniblog.herokuapp.com/api/v1/posts/' + id).
                 then(response => {
                     this.post = response.data;
                     this.editor.setContent(response.data.content);

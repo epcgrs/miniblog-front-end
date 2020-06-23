@@ -130,7 +130,7 @@
                 }
       
                 axios.post(
-                    'posts',
+                    'https://api-miniblog.herokuapp.com/api/v1/posts',
                     formData,
                     {
                         headers: {'Content-Type': 'application/json' }
@@ -147,7 +147,7 @@
             },
             getCategories() {
                 this.loading = true;
-                axios.get('categories').
+                axios.get('https://api-miniblog.herokuapp.com/api/v1/categories').
                 then(response => {
                     this.categories = response.data;
                     this.loading = false;

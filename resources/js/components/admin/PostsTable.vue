@@ -58,7 +58,7 @@
 
                 this.loading = true;
 
-                axios.get(paginateURL).
+                axios.get(`https://api-miniblog.herokuapp.com/api/v1/${paginateURL}`).
                 then(response => {
                     let serializedPosts = response.data.data.map(post => {
                         let stripedContent = post.content.replace(/(<([^>]+)>)/ig,"");
@@ -92,7 +92,7 @@
                     return; 
                 }
 
-                axios.delete('posts/' + id)
+                axios.delete('https://api-miniblog.herokuapp.com/api/v1/posts/' + id)
                 .then(response => {
                     alert("sucesso ao excluir registro");
                     location.reload();

@@ -1934,7 +1934,7 @@ __webpack_require__.r(__webpack_exports__);
     getPost: function getPost(id) {
       var _this = this;
 
-      axios.get('posts/' + id).then(function (response) {
+      axios.get('https://api-miniblog.herokuapp.com/api/v1/posts/' + id).then(function (response) {
         _this.post = response.data;
       })["catch"](function (error) {
         console.log(error);
@@ -2016,7 +2016,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
 
       this.loading = true;
-      axios.get(paginateURL).then(function (response) {
+      axios.get("https://api-miniblog.herokuapp.com/api/v1/".concat(paginateURL)).then(function (response) {
         var serializedPosts = response.data.data.map(function (post) {
           var stripedContent = post.content.replace(/(<([^>]+)>)/ig, "");
           var tinyContent = stripedContent.slice(0, 60) + "...";
@@ -2157,7 +2157,7 @@ __webpack_require__.r(__webpack_exports__);
         content: this.dataForm.content,
         categories: cats
       };
-      axios.post('posts', formData, {
+      axios.post('https://api-miniblog.herokuapp.com/api/v1/posts', formData, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -2173,7 +2173,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.loading = true;
-      axios.get('categories').then(function (response) {
+      axios.get('https://api-miniblog.herokuapp.com/api/v1/categories').then(function (response) {
         _this.categories = response.data;
         _this.loading = false;
       })["catch"](function (error) {
@@ -2311,7 +2311,7 @@ __webpack_require__.r(__webpack_exports__);
         content: this.dataForm.content,
         categories: cats
       };
-      axios.put('posts/' + this.post.id, formData, {
+      axios.put('https://api-miniblog.herokuapp.com/api/v1/posts/' + this.post.id, formData, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -2327,7 +2327,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.loading = true;
-      axios.get('categories').then(function (response) {
+      axios.get('https://api-miniblog.herokuapp.com/api/v1/categories').then(function (response) {
         _this.categories = response.data;
         _this.loading = false;
       })["catch"](function (error) {
@@ -2338,7 +2338,7 @@ __webpack_require__.r(__webpack_exports__);
     getPost: function getPost(id) {
       var _this2 = this;
 
-      axios.get('posts/' + id).then(function (response) {
+      axios.get('https://api-miniblog.herokuapp.com/api/v1/posts/' + id).then(function (response) {
         _this2.post = response.data;
 
         _this2.editor.setContent(response.data.content);
@@ -2436,7 +2436,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
 
       this.loading = true;
-      axios.get(paginateURL).then(function (response) {
+      axios.get("https://api-miniblog.herokuapp.com/api/v1/".concat(paginateURL)).then(function (response) {
         var serializedPosts = response.data.data.map(function (post) {
           var stripedContent = post.content.replace(/(<([^>]+)>)/ig, "");
           var tinyContent = stripedContent.slice(0, 60) + "...";
@@ -2467,7 +2467,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return;
       }
 
-      axios["delete"]('posts/' + id).then(function (response) {
+      axios["delete"]('https://api-miniblog.herokuapp.com/api/v1/posts/' + id).then(function (response) {
         alert("sucesso ao excluir registro");
         location.reload();
       })["catch"](function (error) {
@@ -62460,7 +62460,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
-axios.defaults.baseURL = 'https://api-miniblog.herokuapp.com/api/v1/';
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('posts-list', __webpack_require__(/*! ./components/PostsList.vue */ "./resources/js/components/PostsList.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('post-single', __webpack_require__(/*! ./components/PostSingle.vue */ "./resources/js/components/PostSingle.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('table-posts', __webpack_require__(/*! ./components/admin/PostsTable.vue */ "./resources/js/components/admin/PostsTable.vue")["default"]);

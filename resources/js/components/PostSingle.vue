@@ -23,7 +23,7 @@
         },
         methods: {
             getPost(id) {
-                axios.get('posts/' + id).
+                axios.get('https://api-miniblog.herokuapp.com/api/v1/posts/' + id).
                 then(response => {
                     this.post = response.data;
                 }).

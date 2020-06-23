@@ -17,7 +17,7 @@
                     <td>{{post.title}}</td>
                     <td>
                         <a :href="`/post.html?id=${post.id}`" target="_blank" class="btn btn-primary">Ver</a>
-                        <!-- <a :href="`/admin/post-form.html?id=${post.id}`" class="btn btn-info">Editar</a> -->
+                        <a :href="`/admin/post-form-edit.html?id=${post.id}`" class="btn btn-info">Editar</a>
                         <a href="#" @click="deletePost(post.id)" class="btn btn-danger">Deletar</a>
                     </td>
                 </tr>

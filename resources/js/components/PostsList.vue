@@ -48,7 +48,7 @@
 
                 this.loading = true;
 
-                axios.get(`https://api-miniblog.herokuapp.com/api/v1/${paginateURL}`).
+                axios.get(paginateURL).
                 then(response => {
                     let serializedPosts = response.data.data.map(post => {
                         let stripedContent = post.content.replace(/(<([^>]+)>)/ig,"");
@@ -79,8 +79,8 @@
             },
         },
         created() {
-            let paginateURL = 'posts?page=' + this.page;
+            let paginateURL = 'https://api-miniblog.herokuapp.com/api/v1/posts?page=' + this.page;
             this.getPosts(paginateURL);
         }
     }
-</script>   
+</script>

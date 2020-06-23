@@ -2016,7 +2016,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
 
       this.loading = true;
-      axios.get("https://api-miniblog.herokuapp.com/api/v1/".concat(paginateURL)).then(function (response) {
+      axios.get(paginateURL).then(function (response) {
         var serializedPosts = response.data.data.map(function (post) {
           var stripedContent = post.content.replace(/(<([^>]+)>)/ig, "");
           var tinyContent = stripedContent.slice(0, 60) + "...";
@@ -2044,7 +2044,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   created: function created() {
-    var paginateURL = 'posts?page=' + this.page;
+    var paginateURL = 'https://api-miniblog.herokuapp.com/api/v1/posts?page=' + this.page;
     this.getPosts(paginateURL);
   }
 });
@@ -2436,7 +2436,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
 
       this.loading = true;
-      axios.get("https://api-miniblog.herokuapp.com/api/v1/".concat(paginateURL)).then(function (response) {
+      axios.get(paginateURL).then(function (response) {
         var serializedPosts = response.data.data.map(function (post) {
           var stripedContent = post.content.replace(/(<([^>]+)>)/ig, "");
           var tinyContent = stripedContent.slice(0, 60) + "...";
@@ -2476,7 +2476,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   created: function created() {
-    var paginateURL = 'posts?page=' + this.page;
+    var paginateURL = 'https://api-miniblog.herokuapp.com/api/v1/posts?page=' + this.page;
     this.getPosts(paginateURL);
   }
 });
